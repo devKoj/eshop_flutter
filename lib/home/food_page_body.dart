@@ -1,3 +1,5 @@
+import 'package:eshop/widgets/big_text.dart';
+import 'package:eshop/widgets/small_text.dart';
 import 'package:flutter/material.dart';
 
 class FoodPageBody extends StatefulWidget {
@@ -29,7 +31,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         Container(
     
     height: 220,
-    margin: EdgeInsets.only(left: 7, right: 7),
+    margin: EdgeInsets.only(left: 10, right: 10),
     decoration: BoxDecoration(
       color: index.isEven?Colors.blue:Colors.amber,
       borderRadius: BorderRadius.circular(30),
@@ -45,12 +47,38 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       alignment: Alignment.bottomCenter,
       child: Container(
     
-    height: 140,
+    height: 120,
     margin: EdgeInsets.only(left: 30, right: 30, bottom: 15),
     decoration: BoxDecoration(
       color: Colors.white,
       borderRadius: BorderRadius.circular(30),
      
+    ),
+    child: Container(
+      padding: EdgeInsets.only(top: 10, left: 15, right: 15),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+        BigText(text: "Ghanaian"),
+        SizedBox(height: 10,),
+        Row(
+          children: [
+            Wrap(
+              children: List.generate(5, (index) => Icon(Icons.star, color: Colors.blue , size: 15,)),
+            ),
+            SizedBox(width: 10,),
+            SmallText(text: "5.0"),
+            SizedBox(width: 10,),
+            SmallText(text: "124"),
+            SizedBox(width: 10,),
+            SmallText(text: "comments")
+          ],
+        ),
+        SizedBox(height: 20,),
+        Row(children: [
+          
+        ],)
+      ]),
     ),
     ),
     ) 
